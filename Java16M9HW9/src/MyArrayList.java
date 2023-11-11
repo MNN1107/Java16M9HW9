@@ -20,12 +20,18 @@ public class MyArrayList<T>{
         }
     }
     public T get(int index){
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
         return (T) values[index];
     }
     public int size(){
         return size;
     }
     public T remove(int index){
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
         for (int i = index; i < size - 1; i++) {
             values[i] = values[i +1];
         }
